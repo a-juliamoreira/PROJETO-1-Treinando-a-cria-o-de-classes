@@ -6,7 +6,6 @@ class Product {
         this.inStock = 0
 }
 
-
 addToStock(quantity) {
     this.inStock += quantity
     console.log ('
