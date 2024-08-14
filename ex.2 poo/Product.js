@@ -1,5 +1,5 @@
 class Product {
-    constructor(name, description, price, inStock){
+    constructor(name, description, price){
         this.name = name
         this.description = description 
         this.price = price
@@ -9,18 +9,24 @@ class Product {
 
 addToStock(quantity) {
     this.inStock += quantity
+    console.log ('
+        Nome do produto: ${this.name}
+        Descrição do produto:: ${this.description}
+        Valor do produto: R$${this.price.toFixed(2)}
+        Quantidade do produto: ${this.inStock} 
+    ')
 }
 
-calculateDiscoun(discountPercentage) {
-    const valorDesconto = (this.price * discountPercentage) / 100
-    return this.price - valorDesconto
+calculateDiscoun(discount) {
+    this.price = this.price (discount * this.price / 100)
+    console.log ('
+        ===============================
+        Desconto no produto: ${discount}%
+        Novo valor do produto: ${this.price.toFixed(2)}
+       ')
     }
 }
 
 const product1 = new Product('Biquíni', 'Biquíni preto', 1000)
-console.log(product1)
 product1.addToStock(10)
-console.log('Quantidade no estoque:', product1.inStock)
-
-const descontoPrice = product1.calculateDiscoun(10)
-console.log('Preço com desconto:', descontoPrice)
+product1.calculateDiscount(5)
